@@ -1,0 +1,10 @@
+syntax glob
+
+.pytest*
+.vscode
+.pyc
+.db
+venv
+__pycache__
+logs
+migrations

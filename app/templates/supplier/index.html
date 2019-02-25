@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Kode</th>
+      <th>Nama</th>
+      <th>Alamat</th>
+      <th>Kota</th>
+      <th>Telepon</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for s in supplier %}
+<tr>
+  <td>{{ s.KODESUP }}</td>
+  <td>{{ s.NAMA }}</td>
+  <td>{{ s.ALAMAT }}</td>
+  <td>{{ s.KOTA }}</td>
+  <td>{{ s.TELEPON }}</td>
+</tr>
+{% endfor %}
+  </tbody>
+</table>
+{% endblock %}

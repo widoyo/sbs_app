@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Obat</h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Kode</th>
+      <th>Nama</th>
+      <th>Satuan</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for s in obat %}
+<tr>
+  <td>{{ s.kode }}</td>
+  <td>{{ s.nama }}</td>
+  <td>{{ s.satuan }}</td>
+</tr>
+{% endfor %}
+  </tbody>
+</table>
+{% endblock %}

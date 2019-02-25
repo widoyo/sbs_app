@@ -18,3 +18,4 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['widoyo@gmail.com']
+    DBF_PATH = "/home/widoyo/project/SBS/penjualan/DATA92016B"

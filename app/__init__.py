@@ -31,6 +31,15 @@ def create_app(config_class=Config):
     from app.errors import bp as errors_bp
     app.register_blueprint(errors_bp)
 
+    from app.obat import bp as bp_obat
+    app.register_blueprint(bp_obat, url_prefix='/obat')
+
+    from app.supplier import bp as bp_supplier
+    app.register_blueprint(bp_supplier, url_prefix='/supplier')
+
+    from app.sales import bp as bp_sales
+    app.register_blueprint(bp_sales, url_prefix='/sales')
+
     from app.main import bp as main_bp
     app.register_blueprint(main_bp)
 

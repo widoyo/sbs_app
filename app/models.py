@@ -19,6 +19,81 @@ class Base(db.Model):
     m_id = db.Column(db.Integer)
 
 
+class Obat(Base):
+    __tablename__ = 'obat'
+    id = db.Column(db.Integer, primary_key=True)
+    kode = db.Column(db.String(5), unique=True)
+    nama = db.Column(db.String(60))
+    satuan = db.Column(db.String(12))
+
+    def __repr__(self):
+        return '<Obat {}>'.format(self.nama)
+
+
+class Sales(Base):
+    __tablename__ = 'sales'
+    id = db.Column(db.Integer, primary_key=True)
+    kode = db.Column(db.String(3), unique=True)
+    name = db.Column(db.String(35), unique=True)
+    alamat = db.Column(db.String(35))
+    hp = db.Column(db.String(35))
+
+
+class Pelanggan(Base):
+    __tablename__ = 'pelanggan'
+    id = db.Column(db.Integer, primary_key=True)
+    KODE_PLG = db.Column(db.String())
+    NAMA = db.Column(db.String())
+    ALAMAT = db.Column(db.String())
+    KOTA = db.Column(db.String())
+    TELEPON = db.Column(db.String())
+    KETERANGAN = db.Column(db.String())
+    BYR = db.Column(db.String())
+    TGL_BYR = db.Column(db.String())
+    KREDIT_TER = db.Column(db.String())
+    TGL_KREDIT = db.Column(db.String())
+    TOTAL_KRED = db.Column(db.String())
+    LAMA_KREDI = db.Column(db.String())
+    GIROGANTUN = db.Column(db.String())
+    RETUR = db.Column(db.String())
+    TGL_RETUR = db.Column(db.String())
+    LIMIT = db.Column(db.String())
+    KDAERAH = db.Column(db.String())
+    NPWP = db.Column(db.String())
+    PKP = db.Column(db.String())
+    TGLPKP = db.Column(db.String())
+    JORDER = db.Column(db.String())
+    TOLERANSI = db.Column(db.String())
+    JTRANSAKSI = db.Column(db.String())
+    KODESALES = db.Column(db.String())
+    PPN = db.Column(db.String())
+    DISC = db.Column(db.String())
+    GROUP = db.Column(db.String())
+    NAMAPAJAK = db.Column(db.String())
+    ALAMATPAJA = db.Column(db.String())
+
+
+class Supplier(Base):
+    __tablename__ = 'supplier'
+    id = db.Column(db.Integer, primary_key=True)
+    KODESUP = db.Column(db.String(5))
+    NAMA = db.Column(db.String(16))
+    ALAMAT = db.Column(db.String(255))
+    KOTA = db.Column(db.String(35))
+    TELEPON = db.Column(db.String(15))
+    KETERANGAN = db.Column(db.String(255))
+    BYR = db.Column(db.Float())
+    TGL_BYR = db.Column(db.Date())
+    ORDERTER = db.Column(db.Date())
+    TGL_ORDER = db.Column(db.Date())
+    TOTAL_ORDE = db.Column(db.Float())
+    LAMAKREDIT = db.Column(db.Integer)
+    GIROGANTUN = db.Column(db.Integer)
+    RETUR = db.Column(db.Integer)
+    TGL_RETUR = db.Column(db.Date())
+    NPWP = db.Column(db.String(35))
+
+
 class Coa(Base):
     __tablename__ = 'coa'
     id = db.Column(db.Integer, primary_key=True)
@@ -42,16 +117,6 @@ class JurnalItem(Base):
     dk = db.Column(db.String(1))
     coa_id = db.Column(db.Integer, db.ForeignKey('coa.id'))
     #coa = db.relationship('Coa', back_populates='items')
-
-
-class Obat(Base):
-    __tablename__ = 'obat'
-
-    id = db.Column(db.Integer, primary_key=True)
-    nama = db.Column(db.String(64), index=True, unique=True)
-
-    def __repr__(self):
-        return '<Obat {}>'.format(self.nama)
 
 
 class User(UserMixin, db.Model):

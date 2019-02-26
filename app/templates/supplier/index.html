@@ -15,7 +15,7 @@
 {% for s in supplier %}
 <tr>
   <td>{{ s.KODESUP }}</td>
-  <td>{{ s.NAMA }}</td>
+	<td><a href="/supplier/{{ s.KODESUP }}">{{ s.NAMA }}</a></td>
   <td>{{ s.ALAMAT }}</td>
   <td>{{ s.KOTA }}</td>
   <td>{{ s.TELEPON }}</td>
